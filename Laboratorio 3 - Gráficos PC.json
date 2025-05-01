@@ -388,6 +388,52 @@
         "name": "Jugador6",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Tank Bullet 5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Tank Bullet 5.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Projectile/484d8049267940c755c63a09ea0d21d0a8ddfb1c535b3785bfa0087dcd9c355e_Tank Bullet 5.png",
+          "name": "Tank Bullet 5.png"
+        }
+      },
+      {
+        "file": "assets/Tank Bullet 5_flying.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Tank Bullet 5_flying.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Projectile/429964229516a20aad94bcd30763347c03e372d1387f93a0fa168ea431917278_Tank Bullet 5_flying.png",
+          "name": "Tank Bullet 5_flying.png"
+        }
+      },
+      {
+        "file": "assets/NotoSansJP-Thin.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "f40e19b338c5e8a66a3b1b572f135d9477ab53fcb34ec5ec3f989304d8f12dde_NotoSansJP-Thin.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Open Font License/Japanese/f40e19b338c5e8a66a3b1b572f135d9477ab53fcb34ec5ec3f989304d8f12dde_NotoSansJP-Thin.ttf",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "assets/NotoSansJP-Black.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Open Font License/Japanese/b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
+          "name": "gdevelop-asset-store"
+        }
       }
     ],
     "resourceFolders": []
@@ -397,7 +443,28 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "hasGun",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Vida_Zombie",
+      "type": "number",
+      "value": 3
+    },
+    {
+      "name": "Vida_Jugador",
+      "type": "number",
+      "value": 3
+    },
+    {
+      "name": "Texto_Cerca_Arma",
+      "type": "string",
+      "value": "Presiona \"E\" para tomar el arma!"
+    }
+  ],
   "layouts": [
     {
       "b": 255,
@@ -419,7 +486,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.6040838749988914,
+        "zoomFactor": 0.7876290101673815,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -453,7 +520,7 @@
           "persistentUuid": "2191d59f-8e16-4848-88cd-97cad4220fe5",
           "width": 128,
           "x": 960,
-          "y": 448,
+          "y": 416,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -470,7 +537,7 @@
           "persistentUuid": "d63c46e6-5576-4bff-a62c-7aa7ceebb4dd",
           "width": 128,
           "x": 256,
-          "y": 448,
+          "y": 416,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -480,15 +547,36 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 72,
+          "height": 40,
           "keepRatio": true,
           "layer": "",
           "name": "Gun",
           "persistentUuid": "a35bd78b-d9d0-499f-8e1e-e675e34b175a",
-          "width": 160,
-          "x": 352,
-          "y": 480,
+          "width": 96,
+          "x": 416,
+          "y": 448,
           "zOrder": 10,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform_Ground",
+          "persistentUuid": "eb5e29f7-3647-4da6-afce-b16e751209d8",
+          "width": 0,
+          "x": 576,
+          "y": 288,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -584,6 +672,8 @@
           "effects": [],
           "behaviors": [
             {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -596,9 +686,7 @@
               "ladderClimbingSpeed": 150,
               "maxFallingSpeed": 700,
               "maxSpeed": 250,
-              "name": "PlatformerObject",
               "slopeMaxAngle": 60,
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "useLegacyTrajectory": false,
               "xGrabTolerance": 10,
               "yGrabOffset": 0
@@ -1173,6 +1261,8 @@
           "effects": [],
           "behaviors": [
             {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -1185,9 +1275,7 @@
               "ladderClimbingSpeed": 150,
               "maxFallingSpeed": 700,
               "maxSpeed": 250,
-              "name": "PlatformerObject",
               "slopeMaxAngle": 60,
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "useLegacyTrajectory": false,
               "xGrabTolerance": 10,
               "yGrabOffset": 0
@@ -1593,6 +1681,156 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "cf20b04364d6c2c22725ee50903df16c53e03b6e379fd3f9b7273eeba4d2bf4f",
+          "name": "Bullet",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Tank Bullet 5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 28
+                          },
+                          {
+                            "x": 0,
+                            "y": 28
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "flying",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Tank Bullet 5_flying.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 28
+                          },
+                          {
+                            "x": 0,
+                            "y": 28
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "TextoArma",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Presione \"E\" para tomar el arma",
+          "font": "b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
+          "textAlignment": "center",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Presione \"E\" para tomar el arma",
+            "font": "b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1605,10 +1843,16 @@
             "objectName": "Gun"
           },
           {
+            "objectName": "Bullet"
+          },
+          {
             "objectName": "Jugador"
           },
           {
             "objectName": "Zombie"
+          },
+          {
+            "objectName": "TextoArma"
           }
         ]
       },
@@ -1806,6 +2050,261 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Jugador",
+                "Gun",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"e\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Gun"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "hasGun",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Jugador",
+                "Gun",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "TextoArma",
+                "Text"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "hasGun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+              },
+              "parameters": [
+                "Jugador",
+                "Flippable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Jugador.X() -20",
+                "Jugador.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "Bullet",
+                "-800",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "hasGun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+              },
+              "parameters": [
+                "Jugador",
+                "Flippable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Bullet",
+                "Jugador.X() + 20",
+                "Jugador.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "Bullet",
+                "800",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Bullet",
+                "Zombie",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vida_Zombie",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Bullet",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vida_Zombie",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Zombie",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -1887,6 +2386,10 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
     }
