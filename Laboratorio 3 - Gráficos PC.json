@@ -434,6 +434,54 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Open Font License/Japanese/b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "assets/Heart_Spinning_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Heart_Spinning_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art spinning Items/d9929d9e7b50ab626226ec30e0c7dd5244e4697f28a89066846f2a7716ff0a1a_Heart_Spinning_1.png",
+          "name": "Heart_Spinning_1.png"
+        }
+      },
+      {
+        "file": "assets/Heart_Spinning_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Heart_Spinning_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art spinning Items/47cb0fdb4ab4e7b535e3e620f2e24e3bcf638ec17c02295149dd32ebd011840d_Heart_Spinning_2.png",
+          "name": "Heart_Spinning_2.png"
+        }
+      },
+      {
+        "file": "assets/Heart_Spinning_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Heart_Spinning_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art spinning Items/e11069acc11e2345b585000e69c8eb306c711dedb8ef4b4b254995c7d1f3aea4_Heart_Spinning_3.png",
+          "name": "Heart_Spinning_3.png"
+        }
+      },
+      {
+        "file": "assets/Heart_Spinning_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Heart_Spinning_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art spinning Items/622b22a6123a579433c65142303eb06a5f7c915330253007a3f06b423b8dcbfc_Heart_Spinning_4.png",
+          "name": "Heart_Spinning_4.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -463,6 +511,11 @@
       "name": "Texto_Cerca_Arma",
       "type": "string",
       "value": "Presiona \"E\" para tomar el arma!"
+    },
+    {
+      "name": "score",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -486,7 +539,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.7876290101673815,
+        "zoomFactor": 0.49508400737489267,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -501,8 +554,8 @@
           "layer": "",
           "name": "Platform_Ground",
           "persistentUuid": "1c4f7ab9-04d4-4cee-8572-96199ce1245c",
-          "width": 1279,
-          "x": -1,
+          "width": 1664,
+          "x": -192,
           "y": 544,
           "zOrder": 5,
           "numberProperties": [],
@@ -577,6 +630,124 @@
           "x": 576,
           "y": 288,
           "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 192,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform_Ground",
+          "persistentUuid": "89246e70-869e-4736-bccf-d9063ebfa465",
+          "width": 64,
+          "x": 1408,
+          "y": 352,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 192,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform_Ground",
+          "persistentUuid": "b5a4c08c-4a55-4625-a8fb-cd9dc81c480f",
+          "width": 64,
+          "x": -192,
+          "y": 352,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Heart1",
+          "persistentUuid": "8d96a0b8-18ff-4cdd-94a2-e46433f013c3",
+          "width": 32,
+          "x": 32,
+          "y": 32,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Heart2",
+          "persistentUuid": "8c1055af-e7dc-4fde-af1e-f05c69113554",
+          "width": 32,
+          "x": 96,
+          "y": 32,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Heart3",
+          "persistentUuid": "b27fea51-cc55-4a11-b66c-9e1a08718408",
+          "width": 32,
+          "x": 160,
+          "y": 32,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Score",
+          "persistentUuid": "39f16808-9dbf-49e8-a547-f8fb71039a5a",
+          "width": 0,
+          "x": 1088,
+          "y": 32,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 55,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Final_message",
+          "persistentUuid": "5fcc9790-5887-4082-9f01-2ee4cb589013",
+          "width": 576,
+          "x": 384,
+          "y": 201,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1831,6 +2002,594 @@
             "characterSize": 20,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "fe4e4b881d2b682173254f5c5ff9d805309be4ce4e190e2b26c0195e636ed135",
+          "name": "Heart1",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Spinning",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.125,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "fe4e4b881d2b682173254f5c5ff9d805309be4ce4e190e2b26c0195e636ed135",
+          "name": "Heart2",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Spinning",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.125,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "fe4e4b881d2b682173254f5c5ff9d805309be4ce4e190e2b26c0195e636ed135",
+          "name": "Heart3",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Spinning",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.125,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Heart_Spinning_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 16,
+                            "y": 16
+                          },
+                          {
+                            "x": 0,
+                            "y": 16
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Score",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "SCORE: 0",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "SCORE: 0",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "Final_message",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "\n",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "\n",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "color": "0;0;0"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1849,10 +2608,25 @@
             "objectName": "Jugador"
           },
           {
+            "objectName": "Score"
+          },
+          {
+            "objectName": "Heart1"
+          },
+          {
+            "objectName": "Heart2"
+          },
+          {
+            "objectName": "Heart3"
+          },
+          {
             "objectName": "Zombie"
           },
           {
             "objectName": "TextoArma"
+          },
+          {
+            "objectName": "Final_message"
           }
         ]
       },
@@ -2277,6 +3051,36 @@
                 "Bullet",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "score",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Score",
+                "Text",
+                "=",
+                "\"SCORE: \" + score"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Zombie",
+                ""
+              ]
             }
           ]
         },
@@ -2302,6 +3106,201 @@
               "parameters": [
                 "Zombie",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Jugador",
+                "Zombie",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Vida_Jugador",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Jugador",
+                "=",
+                "256"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vida_Jugador",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Heart3"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vida_Jugador",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Heart2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vida_Jugador",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Heart1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Final_message",
+                "Text",
+                "=",
+                "\"Lo sentimos, has perdido.\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Jugador"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Zombie"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Gun"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "score",
+                ">=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Vida_Jugador",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Final_message",
+                "Text",
+                "=",
+                "\"Felicidades!! Has ganado.\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Zombie"
               ]
             }
           ]
