@@ -498,11 +498,6 @@
       "value": 0
     },
     {
-      "name": "Vida_Zombie",
-      "type": "number",
-      "value": 3
-    },
-    {
       "name": "Vida_Jugador",
       "type": "number",
       "value": 3
@@ -539,11 +534,17 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.49508400737489267,
+        "zoomFactor": 0.3437520241612342,
         "windowMask": false
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "name": "vidaZombie",
+          "type": "number",
+          "value": 1
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -572,12 +573,18 @@
           "name": "Zombie",
           "persistentUuid": "2191d59f-8e16-4848-88cd-97cad4220fe5",
           "width": 128,
-          "x": 1152,
+          "x": 1280,
           "y": 416,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "vidaZombie",
+              "type": "number",
+              "value": 1
+            }
+          ]
         },
         {
           "angle": 0,
@@ -589,7 +596,7 @@
           "name": "Jugador",
           "persistentUuid": "d63c46e6-5576-4bff-a62c-7aa7ceebb4dd",
           "width": 128,
-          "x": 0,
+          "x": 288,
           "y": 416,
           "zOrder": 9,
           "numberProperties": [],
@@ -751,6 +758,29 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 128,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Zombie",
+          "persistentUuid": "97d72add-a472-4822-85be-060644573134",
+          "width": 128,
+          "x": -128,
+          "y": 416,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "vidaZombie",
+              "type": "number",
+              "value": 1
+            }
+          ]
         }
       ],
       "objects": [
@@ -1428,10 +1458,31 @@
           "name": "Zombie",
           "type": "Sprite",
           "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
+          "variables": [
+            {
+              "name": "vidaZombie",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Outline",
+              "name": "Effect",
+              "doubleParameters": {
+                "padding": 0,
+                "thickness": 2
+              },
+              "stringParameters": {
+                "color": "255;255;255"
+              },
+              "booleanParameters": {}
+            }
+          ],
           "behaviors": [
             {
+              "name": "Pathfinding",
+              "type": "PathfindingBehavior::PathfindingBehavior",
               "acceleration": 500,
               "allowDiagonals": true,
               "angleOffset": 0,
@@ -1442,16 +1493,14 @@
               "gridOffsetX": 0,
               "gridOffsetY": 0,
               "maxSpeed": 200,
-              "name": "Pathfinding",
               "rotateObject": true,
-              "smoothingMaxCellGap": 1,
-              "type": "PathfindingBehavior::PathfindingBehavior"
+              "smoothingMaxCellGap": 1
             },
             {
-              "ignoreDefaultControls": true,
               "isFolded": true,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "ignoreDefaultControls": true,
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -2921,7 +2970,7 @@
           "conditions": [
             {
               "type": {
-                "value": "MouseButtonFromTextPressed"
+                "value": "MouseButtonFromTextReleased"
               },
               "parameters": [
                 "",
@@ -2979,7 +3028,7 @@
           "conditions": [
             {
               "type": {
-                "value": "MouseButtonFromTextPressed"
+                "value": "MouseButtonFromTextReleased"
               },
               "parameters": [
                 "",
@@ -3052,12 +3101,13 @@
           "actions": [
             {
               "type": {
-                "value": "SetNumberVariable"
+                "value": "SetNumberObjectVariable"
               },
               "parameters": [
-                "Vida_Zombie",
-                "-",
-                "1"
+                "Zombie",
+                "vidaZombie",
+                "=",
+                "0"
               ]
             },
             {
@@ -3106,10 +3156,11 @@
           "conditions": [
             {
               "type": {
-                "value": "NumberVariable"
+                "value": "NumberObjectVariable"
               },
               "parameters": [
-                "Vida_Zombie",
+                "Zombie",
+                "vidaZombie",
                 "=",
                 "0"
               ]
@@ -3347,6 +3398,109 @@
                 "Jugador",
                 "100",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpawnTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpawnTimer\"",
+                ">",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Zombie",
+                "1280",
+                "416",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Zombie",
+                "-128",
+                "416",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "Zombie",
+                "Scale",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpawnTimer\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Zombie",
+                "vidaZombie",
+                "=",
+                "1"
               ]
             }
           ]
