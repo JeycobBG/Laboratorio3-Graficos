@@ -572,7 +572,7 @@
           "name": "Zombie",
           "persistentUuid": "2191d59f-8e16-4848-88cd-97cad4220fe5",
           "width": 128,
-          "x": 960,
+          "x": 1152,
           "y": 416,
           "zOrder": 8,
           "numberProperties": [],
@@ -589,7 +589,7 @@
           "name": "Jugador",
           "persistentUuid": "d63c46e6-5576-4bff-a62c-7aa7ceebb4dd",
           "width": 128,
-          "x": 256,
+          "x": 0,
           "y": 416,
           "zOrder": 9,
           "numberProperties": [],
@@ -1432,6 +1432,24 @@
           "effects": [],
           "behaviors": [
             {
+              "acceleration": 500,
+              "allowDiagonals": true,
+              "angleOffset": 0,
+              "angularMaxSpeed": 180,
+              "cellHeight": 20,
+              "cellWidth": 20,
+              "extraBorder": 0,
+              "gridOffsetX": 0,
+              "gridOffsetY": 0,
+              "maxSpeed": 200,
+              "name": "Pathfinding",
+              "rotateObject": true,
+              "smoothingMaxCellGap": 1,
+              "type": "PathfindingBehavior::PathfindingBehavior"
+            },
+            {
+              "ignoreDefaultControls": true,
+              "isFolded": true,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 1500,
@@ -1440,7 +1458,6 @@
               "canGrabWithoutMoving": true,
               "deceleration": 1500,
               "gravity": 1000,
-              "ignoreDefaultControls": false,
               "jumpSpeed": 600,
               "jumpSustainTime": 0.2,
               "ladderClimbingSpeed": 150,
@@ -3304,6 +3321,35 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Zombie",
+                "Jugador",
+                "1500",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AddForceVers"
+              },
+              "parameters": [
+                "Zombie",
+                "Jugador",
+                "100",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -3369,6 +3415,10 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
         },
         {
           "name": "Platform",
