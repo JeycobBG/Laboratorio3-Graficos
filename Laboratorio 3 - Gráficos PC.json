@@ -550,7 +550,7 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 64,
+          "height": 192,
           "keepRatio": true,
           "layer": "",
           "name": "Platform_Ground",
@@ -596,7 +596,7 @@
           "name": "Jugador",
           "persistentUuid": "d63c46e6-5576-4bff-a62c-7aa7ceebb4dd",
           "width": 128,
-          "x": 288,
+          "x": 256,
           "y": 416,
           "zOrder": 9,
           "numberProperties": [],
@@ -613,8 +613,8 @@
           "name": "Gun",
           "persistentUuid": "a35bd78b-d9d0-499f-8e1e-e675e34b175a",
           "width": 96,
-          "x": 416,
-          "y": 448,
+          "x": 512,
+          "y": 472,
           "zOrder": 10,
           "numberProperties": [
             {
@@ -627,15 +627,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
           "keepRatio": true,
           "layer": "",
           "name": "Platform_Ground",
           "persistentUuid": "eb5e29f7-3647-4da6-afce-b16e751209d8",
-          "width": 0,
+          "width": 224,
           "x": 576,
-          "y": 288,
+          "y": 320,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -873,6 +874,7 @@
           "effects": [],
           "behaviors": [
             {
+              "gravity": 500,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 1500,
@@ -880,7 +882,6 @@
               "canGrabPlatforms": false,
               "canGrabWithoutMoving": true,
               "deceleration": 1500,
-              "gravity": 1000,
               "ignoreDefaultControls": false,
               "jumpSpeed": 600,
               "jumpSustainTime": 0.2,
@@ -3234,10 +3235,11 @@
           "actions": [
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Heart3"
+                "Heart3",
+                ""
               ]
             }
           ]
@@ -3259,10 +3261,11 @@
           "actions": [
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Heart2"
+                "Heart2",
+                ""
               ]
             }
           ]
@@ -3284,10 +3287,11 @@
           "actions": [
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Heart1"
+                "Heart1",
+                ""
               ]
             },
             {
@@ -3303,26 +3307,38 @@
             },
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Jugador"
+                "Jugador",
+                ""
               ]
             },
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Zombie"
+                "Gun",
+                ""
               ]
             },
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Gun"
+                "Bullet",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "RemoveTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpawnTimer\""
               ]
             }
           ]
@@ -3365,10 +3381,20 @@
             },
             {
               "type": {
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "Zombie"
+                "Zombie",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "RemoveTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpawnTimer\""
               ]
             }
           ]
