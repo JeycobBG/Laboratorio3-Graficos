@@ -534,7 +534,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.3437520241612342,
+        "zoomFactor": 0.645510570331153,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -782,6 +782,22 @@
               "value": 1
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Ayudas",
+          "persistentUuid": "a5b55889-be11-4f2e-ab3c-fbb5b65810cf",
+          "width": 0,
+          "x": 480,
+          "y": 37,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -874,9 +890,9 @@
           "effects": [],
           "behaviors": [
             {
-              "gravity": 500,
               "name": "PlatformerObject",
               "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "gravity": 500,
               "acceleration": 1500,
               "canGoDownFromJumpthru": true,
               "canGrabPlatforms": false,
@@ -2032,14 +2048,14 @@
           "assetStoreId": "",
           "bold": false,
           "italic": false,
-          "name": "TextoArma",
+          "name": "Ayudas",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Presione \"E\" para tomar el arma",
+          "string": "Se mueve con ( <- ,  -> ) y salta con espacio",
           "font": "b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
           "textAlignment": "center",
           "characterSize": 20,
@@ -2062,7 +2078,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Presione \"E\" para tomar el arma",
+            "text": "Se mueve con ( <- ,  -> ) y salta con espacio",
             "font": "b8c175bf6feff78c285badfb3ca900613c7b24d252b802295ca6e08310f69e42_NotoSansJP-Black.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "top",
@@ -2690,7 +2706,7 @@
             "objectName": "Zombie"
           },
           {
-            "objectName": "TextoArma"
+            "objectName": "Ayudas"
           },
           {
             "objectName": "Final_message"
@@ -2935,6 +2951,17 @@
                 "=",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Ayudas",
+                "Text",
+                "=",
+                "\"Dispara con click izquierdo\""
+              ]
             }
           ]
         },
@@ -2957,11 +2984,13 @@
           "actions": [
             {
               "type": {
-                "value": "Montre"
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
-                "TextoArma",
-                "Text"
+                "Ayudas",
+                "Text",
+                "=",
+                "\"Presione la tecla E para tomar el arma.\""
               ]
             }
           ]
@@ -3527,6 +3556,34 @@
                 "vidaZombie",
                 "=",
                 "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "hasGun",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Ayudas",
+                "Text",
+                "=",
+                "\"Precione click izquierdo para disparar\""
               ]
             }
           ]
